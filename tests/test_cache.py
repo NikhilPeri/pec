@@ -1,6 +1,6 @@
 import sys
 import time
-from src.pec.cache import PriorityExpiryCache
+from pec.cache import PriorityExpiryCache
 
 def test_set_evicts_based_on_expiry():
     cache = PriorityExpiryCache(3)

@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-pip install
+pip install git+https://github.com/NikhilPeri/pec.git
 ```
 
 ## Usage
@@ -14,14 +14,14 @@ on the following strategy:
  - Tie breaking among entries with the same priority is done via least recently used.
 
 ```python
-from pec import PriorityExpiryCache
+from pec.cache import PriorityExpiryCache
 
 cache = PriorityExpiryCache(3)
 
-cache.set('A', 'value', priority=1, expiry=sys.maxsize)
+cache.set('A', 'value', priority=1)
 cache.set('B', 'value', priority=1, expiry=1)
-cache.set('C', 'value', priority=1, expiry=sys.maxsize)
-cache.set('D', 'value', priority=1, expiry=sys.maxsize)
+cache.set('C', 'value', priority=1)
+cache.set('D', 'value', priority=1)
 
 assert set(cache.keys()) == {'A', 'C', 'D'}
 ```
@@ -39,4 +39,4 @@ This PEC cache is implemented by indexing items by three fields
 The indexes are implemented use [blist]() which is an open source python implementation of sorted dictionaries and lists
 using a binary search tree as the undelying datastructure
 
-The image below shows how the indexs are structured to quickly query items based on oldest expiration, lowest priorty, least accessed
+The image below shows how the indexs are structured to quickly query items based on oldest expiration, lowest priority, least accessed
