@@ -9,4 +9,5 @@ setup(
     author_email = 'nperi@tesla.com',
     url = 'https://github.com/NikhilPeri/pec',
     download_url = 'https://github.com/NikhilPeri/pec.git',
+    install_requires=['blist==1.3.6']
 )
