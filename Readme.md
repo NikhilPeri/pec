@@ -40,3 +40,4 @@ The indexes are implemented use [blist]() which is an open source python impleme
 using a binary search tree as the undelying datastructure
 
 The image below shows how the indexs are structured to quickly query items based on oldest expiration, lowest priority, least accessed
+![Whiteboarding](docs/whiteboarding.png)
